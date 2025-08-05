@@ -41,6 +41,7 @@ int main() {
     printf("Digite o nome da cidade:  ");
     getchar(); // limpa o ENTER deixado no buffer
     fgets(nomeCidade1, 30, stdin);
+    fgets(nomeCidade1, 20, stdin);
     nomeCidade1[strcspn(nomeCidade1, "\n")] = '\0';
     printf("Digite a população da cidade de %s:  ", nomeCidade1);
     scanf("%d", &populacao1);
@@ -58,6 +59,7 @@ int main() {
     printf("Digite o nome da cidade:  ");
     getchar();
     fgets(nomeCidade2, 30, stdin);
+    fgets(nomeCidade2, 20, stdin);
     nomeCidade2[strcspn(nomeCidade2, "\n")] = '\0';
     printf("Digite a população da cidade de %s:  ", nomeCidade2);
     scanf("%d", &populacao2);
@@ -80,6 +82,10 @@ int main() {
     printf("Área: %.2f km² \n", area1);
     printf("PIB: %.2f \n", pib1);
     printf("Número de pontos turísticos: %d \n", pontosTuristicos1);
+    float densidadePopulacional1 = populacao1 / area1;
+    printf("Densidade Populacional: %.2f hab/km² \n", densidadePopulacional1);
+    float pibCapita1 = populacao1 / pib1;
+    printf("PIB per Capita: %.2f reais \n", pibCapita1);
 
     printf("\nCarta 2:\n");
     printf("Estado: %s \n", estado2);
@@ -89,6 +95,10 @@ int main() {
     printf("Área: %.2f km² \n", area2);
     printf("PIB: %.2f \n", pib2);
     printf("Número de pontos turísticos: %d \n", pontosTuristicos2);
+    float densidadePopulacional2 = populacao2 / area2;
+    printf("Densidade Populacional: %.2f hab/km² \n", densidadePopulacional2);
+    float pibCapita2 = populacao2 / pib2;
+    printf("PIB per Capita: %.2f reais \n", pibCapita2);
 
     return 0;
 }
