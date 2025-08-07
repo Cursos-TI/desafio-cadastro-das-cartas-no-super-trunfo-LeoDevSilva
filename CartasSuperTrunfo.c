@@ -5,13 +5,12 @@
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
 
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
 
-    //Carta numero 1
+    //Variaveis da Carta numero 1
     char estado1[3];
     char idCarta1[3];
     char nomeCidade1[20];
@@ -20,7 +19,7 @@ int main() {
     float pib1;
     int pontosTuristicos1;
 
-    //Carta numero 2
+    //Variaveis da Carta numero 2
     char estado2[3];
     char idCarta2[3];
     char nomeCidade2[20];
@@ -86,6 +85,8 @@ int main() {
     printf("Densidade Populacional: %.2f hab/km² \n", densidadePopulacional1);
     float pibCapita1 = populacao1 / pib1;
     printf("PIB per Capita: %.2f reais \n", pibCapita1);
+    float superPoder1 = (float)populacao1 + pontosTuristicos1 + (area1 + pib1 + pibCapita1) + (densidadePopulacional1 / 1);
+    printf("Super Poder: %.2f \n", superPoder1); 
 
     printf("\nCarta 2:\n");
     printf("Estado: %s \n", estado2);
@@ -99,6 +100,27 @@ int main() {
     printf("Densidade Populacional: %.2f hab/km² \n", densidadePopulacional2);
     float pibCapita2 = populacao2 / pib2;
     printf("PIB per Capita: %.2f reais \n", pibCapita2);
+    float superPoder2 = (float)populacao2 + pontosTuristicos2 + (area2 + pib2 + pibCapita2) + (densidadePopulacional2 / 1);
+    printf("Super Poder: %.2f \n", superPoder2); 
+
+
+    //Variaveis de comparação das cartas
+    int resultadoPopulacao = populacao1 > populacao2;
+    int resultadoArea = area1 > area2;
+    int resultadoPib = pib1 > pib2;
+    int resultadoTuristico = pontosTuristicos1 > pontosTuristicos2;
+    int resultadoDensidadePop = densidadePopulacional1 < densidadePopulacional2;
+    int resultadoPibCapita = pibCapita1 > pibCapita2;
+    int resultadoSuperPoder = superPoder1 > superPoder2;
+
+    printf("\nComparação das cartas:\n"); 
+    printf("População: Carta %d venceu! \n", resultadoPopulacao);
+    printf("Área: Carta %d venceu! \n", resultadoArea);
+    printf("PIB: Carta %d venceu! \n", resultadoPib);
+    printf("Pontos Turísticos: Carta %d venceu! \n", resultadoTuristico);
+    printf("Densidade Populacional: Carta %d venceu! \n", resultadoDensidadePop);
+    printf("PIB per Capita: Carta %d venceu! \n", resultadoPibCapita);
+    printf("Super poder: Carta %d venceu! \n", resultadoSuperPoder);
 
     return 0;
 }
